@@ -272,3 +272,6 @@ debut=Debut([0,3])
 fin=Fin([8,4])
 affichage=Affichage(0.7,debut,fin)
 affichage.loop()
+
+
+# faire que s'il y a deux chemin possibles, le serpent en choisit judicieusement un

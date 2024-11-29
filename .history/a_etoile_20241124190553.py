@@ -272,3 +272,31 @@ debut=Debut([0,3])
 fin=Fin([8,4])
 affichage=Affichage(0.7,debut,fin)
 affichage.loop()
+
+
+# faire que s'il y a deux chemin possibles, le serpent en choisit judicieusement un
+
+
+
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Création de l'arbre
+G = nx.Graph()
+
+# Ajouter des arêtes (ou nœuds)
+edges = [
+    (1, 2), (1, 3),  # Racine et ses enfants
+    (2, 4), (2, 5),  # Enfants du nœud 2
+    (3, 6), (3, 7)   # Enfants du nœud 3
+]
+G.add_edges_from(edges)
+
+# Positionner les nœuds pour un arbre
+pos = nx.spring_layout(G)
+
+# Tracer l'arbre
+plt.figure(figsize=(8, 6))
+nx.draw(G, pos, with_labels=True, node_size=500, node_color="lightblue", font_size=12, font_weight="bold", edge_color="gray")
+plt.title("Arbre avec NetworkX et Matplotlib")
+plt.show()
